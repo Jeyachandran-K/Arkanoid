@@ -254,8 +254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89214165b9c32614cb46fdb7b3f1f2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestPlayer
-  moveInput: 0
-  movementVector: {x: 0, y: 0}
   testPlayerSpeed: 5
 --- !u!1 &378396803
 GameObject:

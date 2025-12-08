@@ -109,6 +109,15 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Vector2Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""1a6b6152-3b66-4869-b7bc-4a37f441d8d9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -116,17 +125,6 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""f520300b-e2d3-41ff-a6f7-7e25da73d135"",
                     ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9fbe87ec-6314-449d-b439-9417384afad0"",
-                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -146,15 +144,114 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""b4eb452d-1785-4360-9efc-a132e1c08476"",
+                    ""name"": ""WASD"",
+                    ""id"": ""fd7859fc-a745-40c5-8ab1-b4eae0982f06"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""65cdc1ca-362a-4673-854d-e9e5b653ca89"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""f07e5051-8b87-4f4e-a710-a90ff4ef4321"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""7692818c-ee96-4dcc-9113-b4506e69a38f"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""Vector2Movement"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""e27daeac-729b-4eb7-bf2f-f837036e5373"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ArrowLeys"",
+                    ""id"": ""a2758d8c-896b-407d-bd59-c7880021884f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""47463986-4fba-4b7c-a7eb-73fe3fef9943"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""771fb7d3-39b9-489c-8b50-5f0fde7ec1cd"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""21b3484e-34d4-4699-928e-bf1b2daee8f5"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""9725acf0-a404-4935-a9e5-76dec6c8ae1b"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vector2Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -165,6 +262,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_RightMovement = m_GamePlay.FindAction("RightMovement", throwIfNotFound: true);
         m_GamePlay_LeftMovement = m_GamePlay.FindAction("LeftMovement", throwIfNotFound: true);
+        m_GamePlay_Vector2Movement = m_GamePlay.FindAction("Vector2Movement", throwIfNotFound: true);
     }
 
     ~@GameControls()
@@ -247,6 +345,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
     private List<IGamePlayActions> m_GamePlayActionsCallbackInterfaces = new List<IGamePlayActions>();
     private readonly InputAction m_GamePlay_RightMovement;
     private readonly InputAction m_GamePlay_LeftMovement;
+    private readonly InputAction m_GamePlay_Vector2Movement;
     /// <summary>
     /// Provides access to input actions defined in input action map "GamePlay".
     /// </summary>
@@ -266,6 +365,10 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "GamePlay/LeftMovement".
         /// </summary>
         public InputAction @LeftMovement => m_Wrapper.m_GamePlay_LeftMovement;
+        /// <summary>
+        /// Provides access to the underlying input action "GamePlay/Vector2Movement".
+        /// </summary>
+        public InputAction @Vector2Movement => m_Wrapper.m_GamePlay_Vector2Movement;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -298,6 +401,9 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             @LeftMovement.started += instance.OnLeftMovement;
             @LeftMovement.performed += instance.OnLeftMovement;
             @LeftMovement.canceled += instance.OnLeftMovement;
+            @Vector2Movement.started += instance.OnVector2Movement;
+            @Vector2Movement.performed += instance.OnVector2Movement;
+            @Vector2Movement.canceled += instance.OnVector2Movement;
         }
 
         /// <summary>
@@ -315,6 +421,9 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             @LeftMovement.started -= instance.OnLeftMovement;
             @LeftMovement.performed -= instance.OnLeftMovement;
             @LeftMovement.canceled -= instance.OnLeftMovement;
+            @Vector2Movement.started -= instance.OnVector2Movement;
+            @Vector2Movement.performed -= instance.OnVector2Movement;
+            @Vector2Movement.canceled -= instance.OnVector2Movement;
         }
 
         /// <summary>
@@ -369,5 +478,12 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLeftMovement(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Vector2Movement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnVector2Movement(InputAction.CallbackContext context);
     }
 }
