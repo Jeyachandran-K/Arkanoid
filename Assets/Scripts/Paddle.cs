@@ -6,7 +6,7 @@ public class Paddle : MonoBehaviour
 
     [SerializeField]private float speed = 10f;
     private float clampX = 15f;
-    private float moveInput = 0f;
+    
 
     private Vector3 paddlePosition;
 

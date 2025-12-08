@@ -109,6 +109,15 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Launch"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b32a131-489b-43ed-8c22-7f44f0140481"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -155,6 +164,17 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""action"": ""LeftMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3c4231a-5b66-4006-93ff-283ed77a845f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Launch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -165,6 +185,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_RightMovement = m_GamePlay.FindAction("RightMovement", throwIfNotFound: true);
         m_GamePlay_LeftMovement = m_GamePlay.FindAction("LeftMovement", throwIfNotFound: true);
+        m_GamePlay_Launch = m_GamePlay.FindAction("Launch", throwIfNotFound: true);
     }
 
     ~@GameControls()
@@ -247,6 +268,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
     private List<IGamePlayActions> m_GamePlayActionsCallbackInterfaces = new List<IGamePlayActions>();
     private readonly InputAction m_GamePlay_RightMovement;
     private readonly InputAction m_GamePlay_LeftMovement;
+    private readonly InputAction m_GamePlay_Launch;
     /// <summary>
     /// Provides access to input actions defined in input action map "GamePlay".
     /// </summary>
@@ -266,6 +288,10 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "GamePlay/LeftMovement".
         /// </summary>
         public InputAction @LeftMovement => m_Wrapper.m_GamePlay_LeftMovement;
+        /// <summary>
+        /// Provides access to the underlying input action "GamePlay/Launch".
+        /// </summary>
+        public InputAction @Launch => m_Wrapper.m_GamePlay_Launch;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -298,6 +324,9 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             @LeftMovement.started += instance.OnLeftMovement;
             @LeftMovement.performed += instance.OnLeftMovement;
             @LeftMovement.canceled += instance.OnLeftMovement;
+            @Launch.started += instance.OnLaunch;
+            @Launch.performed += instance.OnLaunch;
+            @Launch.canceled += instance.OnLaunch;
         }
 
         /// <summary>
@@ -315,6 +344,9 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             @LeftMovement.started -= instance.OnLeftMovement;
             @LeftMovement.performed -= instance.OnLeftMovement;
             @LeftMovement.canceled -= instance.OnLeftMovement;
+            @Launch.started -= instance.OnLaunch;
+            @Launch.performed -= instance.OnLaunch;
+            @Launch.canceled -= instance.OnLaunch;
         }
 
         /// <summary>
@@ -369,5 +401,12 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLeftMovement(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Launch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLaunch(InputAction.CallbackContext context);
     }
 }
