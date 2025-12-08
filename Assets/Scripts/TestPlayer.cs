@@ -11,8 +11,16 @@ public class TestPlayer : MonoBehaviour
     private void Awake()
     {
         gameControls = new GameControls();
+        gameControls.Enable();
+        gameControls.GamePlay.Vector2Movement.performed += Vector2Movement_performed;
 
     }
+
+    private void Vector2Movement_performed(InputAction.CallbackContext obj)
+    {
+        moveDirection = obj.ReadValue<Vector2>();
+    }
+   
 
     private void Update()
     {
