@@ -67,7 +67,7 @@ public class Ball : MonoBehaviour
             float scaleX = 5f;
             Vector2 newDirection = new Vector2(diff*scaleX,Mathf.Abs(ballRigidbody2D.linearVelocity.y)).normalized;
             ballRigidbody2D.linearVelocity= newDirection*initialBallSpeed;
-            Debug.Log("new Velocity :"+ballRigidbody2D.linearVelocity.magnitude);
+           
         }
     }
 
@@ -81,7 +81,7 @@ public class Ball : MonoBehaviour
     }
     private void ResetBall()
     {
-        //transform.position = Vector3.zero;
+        
         ballRigidbody2D.linearVelocity = Vector2.zero;
         isPlay = false;
     }
